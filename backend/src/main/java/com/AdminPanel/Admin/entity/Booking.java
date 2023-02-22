@@ -31,5 +31,9 @@ public class Booking {
     @OneToMany(mappedBy="booking")
     private Set<BookingDeails> bookingDeails;
 
-
+    public Booking(Date date, Double total, User user) {
+        this.date = date;
+        Total = total;
+        this.user = user;
+    }
 }

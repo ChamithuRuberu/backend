@@ -33,7 +33,7 @@ public class User {
     @Column(name = "password")
     private String password;
 
-    @Column(name = "active_state",columnDefinition = "TINYINT default 1")
+    @Column(name = "active_state",columnDefinition = "TINYINT default 0")
     private boolean activestate;
 
     @OneToMany(mappedBy="user")

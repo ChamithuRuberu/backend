@@ -1,7 +1,7 @@
 package com.AdminPanel.Admin.controller;
 
-import com.AdminPanel.Admin.dto.request.RequestBookingSaveDTO;
-import com.AdminPanel.Admin.service.BookingService;
+import com.AdminPanel.Admin.dto.request.RequestMovieSaveDTO;
+import com.AdminPanel.Admin.service.MovieService;
 import com.AdminPanel.Admin.util.StanderResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,16 +10,14 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
-@RequestMapping("api/v1/booking2")
-public class BookingController {
-
-
+@RequestMapping("api/v1/api3")
+public class MovieController {
     @Autowired
-    private BookingService bookingService;
+    private MovieService movieService;
 
-    @PostMapping("/saveBooking")
-    public ResponseEntity<StanderResponse> saveBooking(@RequestBody RequestBookingSaveDTO requestBookingSaveDTO) {
-        String id=bookingService.addBooking(requestBookingSaveDTO);
+    @PostMapping("/saveMovie")
+    public ResponseEntity<StanderResponse> saveMovie(@RequestBody RequestMovieSaveDTO requestMovieSaveDTO) {
+        String id=movieService.addMovie(requestMovieSaveDTO);
         return new ResponseEntity<StanderResponse>(
                 new StanderResponse(201,id+" Saved Succecfully ",id),
                 HttpStatus.CREATED
