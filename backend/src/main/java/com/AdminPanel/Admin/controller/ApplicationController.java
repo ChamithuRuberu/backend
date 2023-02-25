@@ -9,4 +9,9 @@ public class ApplicationController {
     public String gohome(){
         return "index";
     }
+
+    @GetMapping("/AdminRegister")
+    public String goadmin(){
+        return "AdminRegister";
+    }
 }
