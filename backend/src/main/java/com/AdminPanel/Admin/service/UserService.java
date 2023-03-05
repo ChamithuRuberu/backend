@@ -17,4 +17,6 @@ public interface UserService {
     UserDTO getMemberByNIC(String nic);
 
     String updateUser(RequestUserUpdateDTO requestUserUpdateDTO);
+
+    List<UserDTO> getAllUsers();
 }

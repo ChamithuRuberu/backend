@@ -21,19 +21,19 @@ public class User {
     @Column(name = "name",length = 30)
     private String  userName;
 
-    @Column(name ="nic",length =13)
+    @Column(name ="nic",length =13,unique = true)
     private String userNic;
 
-    @Column(name = "contact",length = 50)
+    @Column(name = "contact",length = 50,unique = true)
     private int memberContact;
 
-    @Column(name = "email")
+    @Column(name = "email",unique = true)
     private String userEmail;
 
     @Column(name = "password")
     private String password;
 
-    @Column(name = "active_state",columnDefinition = "TINYINT default 0")
+    @Column(name = "active_state",columnDefinition = "TINYINT default true")
     private boolean activestate;
 
     @OneToMany(mappedBy="user")

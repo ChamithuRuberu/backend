@@ -1,6 +1,7 @@
 package com.AdminPanel.Admin.controller;
 
 
+import com.AdminPanel.Admin.dto.MovieDTO;
 import com.AdminPanel.Admin.dto.UserDTO;
 import com.AdminPanel.Admin.dto.request.RequestUserSaveDTO;
 import com.AdminPanel.Admin.dto.request.RequestUserUpdateDTO;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("api/v1/user")
 public class UserController {
 
@@ -61,5 +62,18 @@ public class UserController {
     public String updateMameber(@RequestBody RequestUserUpdateDTO requestUserUpdateDTO) {
         String updated = userService.updateUser(requestUserUpdateDTO);
         return updated + "updated";
+    }
+
+    @GetMapping(
+            path = "get-all-Users"
+    )
+    public ResponseEntity<StanderResponse> getAllUsers() {
+
+        List<UserDTO> userDTOS = userService.getAllUsers();
+        return new ResponseEntity<StanderResponse>(
+
+                new StanderResponse(200," done",userDTOS),
+                HttpStatus.OK
+        );
     }
 }

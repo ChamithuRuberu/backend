@@ -3,7 +3,6 @@ package com.AdminPanel.Admin.service.impl;
 import com.AdminPanel.Admin.dto.request.RequestBookingSaveDTO;
 import com.AdminPanel.Admin.entity.Booking;
 import com.AdminPanel.Admin.entity.BookingDeails;
-import com.AdminPanel.Admin.entity.Movie;
 import com.AdminPanel.Admin.repo.BookinDetailsRepo;
 import com.AdminPanel.Admin.repo.BookingRepo;
 import com.AdminPanel.Admin.repo.MovieRepo;
@@ -15,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -32,7 +30,7 @@ public class BookingServiceIMPL implements BookingService {
     private BookinDetailsRepo bookinDetailsRepo;
 
     @Autowired
-    private MovieRepo  movieRepo;
+    private MovieRepo movieRepo;
     @Autowired
     private UserRepo userRepo;
 

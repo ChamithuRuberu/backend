@@ -1,5 +1,6 @@
 package com.AdminPanel.Admin.service.impl;
 
+import com.AdminPanel.Admin.dto.MovieDTO;
 import com.AdminPanel.Admin.dto.UserDTO;
 import com.AdminPanel.Admin.dto.request.RequestUserSaveDTO;
 import com.AdminPanel.Admin.dto.request.RequestUserUpdateDTO;
@@ -13,6 +14,7 @@ import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -76,5 +78,16 @@ public class UserServiceIMPL implements UserService {
             return userRepo.save(user).getUserName();
         }
         return "Not in DATABASE";
+    }
+
+    @Override
+    public List<UserDTO> getAllUsers() {
+        List<User> getUser = userRepo.findAll();
+        List<UserDTO> userDTOS = new ArrayList<>();
+
+        List<UserDTO> userDTOS1 = modelMapper.
+                map(getUser, new TypeToken<List<UserDTO>>() {
+                }.getType());
+        return userDTOS1;
     }
 }
