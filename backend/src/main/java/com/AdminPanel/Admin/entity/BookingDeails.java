@@ -21,17 +21,22 @@ public class BookingDeails {
     private String MovieName;
 
     @Column(name = "quantity", length = 20)
-    private String Quantity;
+    private int Quantity;
 
-    @Column(name = "amount",nullable = false)
-    private Double Amount;
+    @Column(name = "ticket_price",nullable = false)
+    private Double TicketPrice;
 
+    @Column(name = "seat_number",length = 5,unique = true)
+    private int SeatNumber;
+
+    @Column(name = "theater_number",length = 5)
+    private int TheaterNumber;
     @ManyToOne
     @JoinColumn(name="booking_id", nullable=false)
-    private Booking booking;
+    private Booking booking_id;
 
     @ManyToOne
     @JoinColumn(name="movie_id", nullable=false)
-    private Movie movie;
+    private Movie movie_id;
 
 }

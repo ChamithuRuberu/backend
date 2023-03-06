@@ -36,7 +36,7 @@ public class User {
     @Column(name = "active_state",columnDefinition = "TINYINT default true")
     private boolean activestate;
 
-    @OneToMany(mappedBy="user")
+    @OneToMany(mappedBy="userid")
     private Set<Booking> bookings;
 
     public User(String password, boolean activestate) {

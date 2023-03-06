@@ -34,14 +34,15 @@ public class BookingServiceIMPL implements BookingService {
     @Autowired
     private UserRepo userRepo;
 
+
     @Override
     @Transactional
     public String addBooking(RequestBookingSaveDTO requestBookingSaveDTO) {
         Booking booking = new Booking(
 
                 requestBookingSaveDTO.getDate(),
-                requestBookingSaveDTO.getTotal(),
-                userRepo.getById(requestBookingSaveDTO.getUser())
+                requestBookingSaveDTO.getTotalPrice(),
+                userRepo.getById(requestBookingSaveDTO.getUserid())
         );
         bookingRepo.save(booking);
 
@@ -49,9 +50,11 @@ public class BookingServiceIMPL implements BookingService {
             List<BookingDeails>bookingDeails=modelMapper.
                     map(requestBookingSaveDTO.getRequestBookingSaveDetailsDTOS(),new TypeToken<List<BookingDeails>>(){
                     }.getType());
+
+
             for (int i=0;i<bookingDeails.size();i++){
-                bookingDeails.get(i).setBooking(booking);
-                bookingDeails.get(i).setMovie(movieRepo.getById(requestBookingSaveDTO.getRequestBookingSaveDetailsDTOS().get(i).getMovie()));
+                bookingDeails.get(i).setBooking_id(booking);
+                bookingDeails.get(i).setMovie_id(movieRepo.getById(requestBookingSaveDTO.getRequestBookingSaveDetailsDTOS().get(i).getMovie()));
             }
             if (bookingDeails.size()>0){
                 bookinDetailsRepo.saveAll(bookingDeails);

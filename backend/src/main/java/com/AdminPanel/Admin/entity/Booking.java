@@ -19,21 +19,23 @@ public class Booking {
     @GeneratedValue(strategy =GenerationType.AUTO)
     private int BookingId;
 
+
     @Column(name = "date",columnDefinition = "DATETIME")
     private Date date;
 
-    @Column(name = "total",nullable = false)
-    private Double Total;
+    @Column(name = "totalPrice",nullable = false)
+    private Double TotalPrice;
+
     @ManyToOne
     @JoinColumn(name="user_id", nullable=false)
-    private User user;
+    private User userid;
 
-    @OneToMany(mappedBy="booking")
+    @OneToMany(mappedBy="booking_id")
     private Set<BookingDeails> bookingDeails;
 
-    public Booking(Date date, Double total, User user) {
+    public Booking(Date date, Double totalPrice, User userid) {
         this.date = date;
-        Total = total;
-        this.user = user;
+        TotalPrice = totalPrice;
+        this.userid = userid;
     }
 }

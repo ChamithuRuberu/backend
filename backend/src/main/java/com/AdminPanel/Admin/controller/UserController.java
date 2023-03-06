@@ -6,14 +6,22 @@ import com.AdminPanel.Admin.dto.UserDTO;
 import com.AdminPanel.Admin.dto.request.RequestUserSaveDTO;
 import com.AdminPanel.Admin.dto.request.RequestUserUpdateDTO;
 import com.AdminPanel.Admin.service.UserService;
+import com.AdminPanel.Admin.util.FileUploadUtil;
 import com.AdminPanel.Admin.util.StanderResponse;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:3000")
@@ -75,5 +83,9 @@ public class UserController {
                 new StanderResponse(200," done",userDTOS),
                 HttpStatus.OK
         );
+    }
+    @PostMapping("/uploadImg")
+    public void saveImag(@RequestParam ("files")MultipartFile[] files){
+
     }
 }

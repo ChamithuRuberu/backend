@@ -37,7 +37,7 @@ public class Movie {
     @Column(name = "Active_state")
     private boolean activestate;
 
-    @OneToMany(mappedBy="movie")
+    @OneToMany(mappedBy="movie_id")
     private Set<BookingDeails> bookingDeails;
 
 
