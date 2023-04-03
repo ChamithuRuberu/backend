@@ -32,6 +32,7 @@ const Home = ({ slides }) => {
         {Data.map((slide, index) => {
           return (
             <div className={index === current ? "slide active" : "slide"} key={index}>
+              {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
               {index === current && <img src={slide.image} alt='Home Image' />}
             </div>
           )
@@ -44,7 +45,7 @@ const Home = ({ slides }) => {
           <span> Search and Book Movie</span>
 
           <form>
-            <input type='text' placeholder='Seacrh Movie' />
+            <input type='text' placeholder='Search Movie' />
             <div className='flex_space'>
               <input type='date' placeholder='Check In' />
               {/*<input type='date' placeholder='Check Out' />*/}
