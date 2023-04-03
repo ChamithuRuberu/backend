@@ -5,6 +5,7 @@ import EmptyFile from "../Common/Empty/EmptyFile"
 import { useParams } from "react-router-dom"
 import HeadTitle from "../Common/HeadTitle/HeadTitle"
 import "./singlepage.css"
+import BookingForum from "../Components/BookingForum/BookingForum";
 
 const SinglePage = () => {
   const { id } = useParams()
@@ -32,21 +33,24 @@ const SinglePage = () => {
 
             <article className='content flex'>
               <div className='main-content'>
-                <img src={item.image} alt='' />
+                {/*<img src={item.image} alt='' />*/}
                 <p>{item.desc}</p>
                 <p>{item.desc}</p>
 
-                <div className='para flex_space'>
-                  <p>{item.sidepara}</p>
-                  <p>{item.sidepara}</p>
-                </div>
-                <h1>Whta is the {item.title} City ?</h1>
-                <p>{item.desc}</p>
+                <Booking/>
+                {/*ain krnna ona kali*/}
+                {/*<div className='para flex_space'>*/}
+                {/*  <p>{item.sidepara}</p>*/}
+                {/*  <p>{item.sidepara}</p>*/}
+                {/*</div>*/}
+                {/*<h1>Whta is the {item.title} City ?</h1>*/}
+                {/*<p>{item.desc}</p>*/}
 
-                <div className='image grid1 '>
-                  <img src={item.paraImage_one} alt='' />
-                  <img src={item.paraImage_two} alt='' />
-                </div>
+                {/*<div className='image grid1 '>*/}
+                {/*  <img src={item.paraImage_one} alt='' />*/}
+                {/*  <img src={item.paraImage_two} alt='' />*/}
+                {/*</div>*/}
+
                 <p>{item.desc}</p>
               </div>
               {/* --------- main-content--------- */}
@@ -61,9 +65,10 @@ const SinglePage = () => {
                   </button>
                 </div>
 
-                <div className='box2'>
-                  <p>{item.sidepara}</p>
-                </div>
+                {/*ain krnna ona kali*/}
+                {/*<div className='box2'>*/}
+                {/*  <p>{item.sidepara}</p>*/}
+                {/*</div>*/}
               </div>
               {/* --------- side-content--------- */}
             </article>
