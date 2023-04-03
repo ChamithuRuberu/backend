@@ -5,7 +5,6 @@ import EmptyFile from "../Common/Empty/EmptyFile"
 import { useParams } from "react-router-dom"
 import HeadTitle from "../Common/HeadTitle/HeadTitle"
 import "./singlepage.css"
-import BookingForum from "../Components/BookingForum/BookingForum";
 
 const SinglePage = () => {
   const { id } = useParams()
@@ -37,7 +36,7 @@ const SinglePage = () => {
                 <p>{item.desc}</p>
                 <p>{item.desc}</p>
 
-                <Booking/>
+
                 {/*ain krnna ona kali*/}
                 {/*<div className='para flex_space'>*/}
                 {/*  <p>{item.sidepara}</p>*/}
