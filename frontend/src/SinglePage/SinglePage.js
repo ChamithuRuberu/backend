@@ -32,25 +32,22 @@ const SinglePage = () => {
 
             <article className='content flex'>
               <div className='main-content'>
-                {/*<img src={item.image} alt='' />*/}
-                <p>{item.desc}</p>
-                <p>{item.desc}</p>
+                
 
-
-                {/*ain krnna ona kali*/}
-                {/*<div className='para flex_space'>*/}
-                {/*  <p>{item.sidepara}</p>*/}
-                {/*  <p>{item.sidepara}</p>*/}
-                {/*</div>*/}
-                {/*<h1>Whta is the {item.title} City ?</h1>*/}
-                {/*<p>{item.desc}</p>*/}
-
-                {/*<div className='image grid1 '>*/}
-                {/*  <img src={item.paraImage_one} alt='' />*/}
-                {/*  <img src={item.paraImage_two} alt='' />*/}
-                {/*</div>*/}
-
-                <p>{item.desc}</p>
+          <form>
+            <input type='text' placeholder='Enter Your Name' />
+            <div className='flex_space'>
+              <input type='date' placeholder='Check In' />
+              {/*<input type='date' placeholder='Check Out' />*/}
+            </div>
+            <div className='flex_space'>
+              <input type='number' placeholder='Adult(s)(18+)' />
+              <input type='number' placeholder='Children(0- 17)' />
+            </div>
+            <input type='number' placeholder='Seats' />
+            <input type='Submit' value='Book' className='submit' />
+          </form>
+       
               </div>
               {/* --------- main-content--------- */}
 
@@ -58,16 +55,14 @@ const SinglePage = () => {
               <div className='side-content'>
                 <div className='box'>
                   <h2>About Film</h2>
+                  
                   <p>{item.sidepara}</p>
+                  
+                  
                   <button className='outline-btn'>
                     <i className='fa fa-phone-alt'></i> Contact Us
                   </button>
                 </div>
-
-                {/*ain krnna ona kali*/}
-                {/*<div className='box2'>*/}
-                {/*  <p>{item.sidepara}</p>*/}
-                {/*</div>*/}
               </div>
               {/* --------- side-content--------- */}
             </article>

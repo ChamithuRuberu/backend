@@ -1,5 +1,5 @@
 import React from "react"
-import "../../App.css"
+import "../../app.css"
 import Hero from "../HomeSection/Hero"
 import HomeAbout from "../HomeSection/HomeAbout"
 import MostPopular from "../HomeSection/popular/MostPopular"
@@ -10,7 +10,7 @@ import Gallery from "../HomeSection/gallery/Gallery"
 
 const Home = () => {
   return (
-    <>
+    <div>
       <Hero />
       <HomeAbout />
       <MostPopular />
@@ -18,7 +18,7 @@ const Home = () => {
       <Download />
       <Works />
       <Gallery />
-    </>
+    </div>
   )
 }
 
