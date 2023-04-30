@@ -3,6 +3,7 @@ import {FaUsers} from 'react-icons/fa'
 import {MdMovieCreation} from 'react-icons/md'
 import {FaTicketAlt} from 'react-icons/fa'
 import {Link} from 'react-router-dom'
+import BookingDetailsList from "./BookingDetailList";
 
 export default class Menu extends Component {
   render() {
@@ -71,6 +72,16 @@ export default class Menu extends Component {
                     <FaTicketAlt className='IoTicketOutline'/>
                     <p>
                     <t>  </t>Bookings
+                    </p>
+                  </Link>
+                  <a href="src/component/Menu"></a>
+                </li>
+
+                <li className="nav-item has-treeview">
+                  <Link to="/BookingDetailsList" className="nav-link">
+                    <FaTicketAlt className='IoTicketOutline'/>
+                    <p>
+                      <t>  </t>Booking Details
                     </p>
                   </Link>
                   <a href="src/component/Menu"></a>

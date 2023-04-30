@@ -10,6 +10,8 @@ import LogIn from './component/LogIn';
 import UserList from './component/UserList';
 import MovieList from './component/MovieList';
 import BookingList from './component/BookingList';
+import BookingDetailsList from "./component/BookingDetailList";
+import AddBooking from "./component/AddBooking";
 
 
 function App() {
@@ -38,6 +40,15 @@ function App() {
       <Route path='/booking'
         element={<BookingList />}>
       </Route>
+
+      <Route path='/BookingDetailsList'
+      element={<BookingDetailsList />}>
+      </Route>
+
+      <Route path='/AddBooking'
+      element={<AddBooking />}>
+      </Route>
+
       <Route path='/userForm'
         element={<AddUser />}>
       </Route>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import AddBooking from "./AddBooking";
 
 
 export default class BookingList extends Component {
@@ -12,18 +13,22 @@ export default class BookingList extends Component {
         <div class="col-12">
         <div class="card">
         <div class="card-header">
-        <h3 class="card-title">BookingList</h3>
+        <h3 class="card-title">Booking List</h3>
         </div>
+            <div className="container-fluid pt-4">
 
+                <Link to='/AddBooking' class="btn btn-outline-success">
+                    <i className="fas fa-plus"></i> Add Booking
+                </Link>
+            </div>
         <div class="card-body">
         <table id="example2" class="table table-bordered table-hover">
         <thead>
         <tr>
-        <th>Rendering engine</th>
-        <th>Browser</th>
-        <th>Platform(s)</th>
-        <th>Engine version</th>
-        <th>CSS grade</th>
+        <th>Booking Id</th>
+        <th>User Id</th>
+        <th>Date</th>
+        <th>Total Fee</th>
         </tr>
         </thead>
         <tbody>

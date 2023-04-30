@@ -54,41 +54,37 @@ export default class AddMovies extends Component {
           <form>
 
         <div class="card-body">
-
             <div className="form-group">
-                <label htmlFor="exampleInput">MovieName</label>
-                <input type="text" className="form-control" id="M_name" placeholder="Enter Movie Name"/>
-                    value={this.state.movieName} onChange={this.changeMovieHandler}/>
 
+                <input type="text" className="form-control" placeholder="Movie Name" name="name"
+                       value={this.state.userName} onChange={this.changeMovieHandler}/>
             </div>
 
             <div className="form-group">
-                <label htmlFor="exampleInput">Description</label>
-                <input type="text" className="form-control" id="M_desc" placeholder="Enter description"/>
-                value={this.state.description} onChange={this.changedescriptionHandler}/>
 
-            </div>
-
-        <div class="form-group">
-        <label for="exampleInput">ReleaseDate</label>
-        <input type="date" class="form-control" id="M_date" placeholder="releaseDate"/>
-            value={this.state.releaseDate} onChange={this.changeReleaseDateHandler}/>
-
-        </div>
-
-            <div className="form-group">
-                <label htmlFor="exampleInput">Director</label>
-                <input type="text" className="form-control" id="M_Director" placeholder="Director"/>
-                    value={this.state.director} onChange={this.changededirectorHandler}/>
-
+                <input type="text" className="form-control" placeholder="Description" name="nic"
+                       value={this.state.userNic} onChange={this.changedescriptionHandler}/>
             </div>
 
             <div className="form-group">
-                <label htmlFor="exampleInput">Duration (min:)</label>
-                <input type="number" className="form-control" id="M_duration" placeholder="duration"/>
-                    value={this.state.duration} onChange={this.changedurationHandler}/>
 
+                <input type="date" className="form-control" placeholder="Release Date" name="contact"
+                       value={this.state.memberContact} onChange={this.changeReleaseDateHandler}/>
             </div>
+
+            <div className="form-group">
+
+                <input type="text" className="form-control" placeholder="Director" name="email"
+                       value={this.state.userEmail} onChange={this.changededirectorHandler}/>
+            </div>
+
+            <div className="form-group">
+
+                <input type="email" className="form-control" placeholder="Duration (min:)" name="email"
+                       value={this.state.userEmail} onChange={this.changedurationHandler}/>
+            </div>
+
+
 
         <div class="form-group">
         <label for="exampleInputFile">Upload</label>

@@ -66,7 +66,7 @@ export default class AddUser extends Component {
             <div className="form-group">
                 <label>Contact Number</label>
                 <input type="text" className="form-control" placeholder="Enter memberContact" name="contact"
-                       value={this.state.memberContact} onChange={this.changecontactHandler}/>
+                       value={this.state.memberContact}  onChange={this.changecontactHandler}/>
             </div>
 
             <div className="form-group">
