@@ -1,10 +1,9 @@
 package com.AdminPanel.Admin.service.impl;
 
-import com.AdminPanel.Admin.dto.MovieDTO;
 import com.AdminPanel.Admin.dto.UserDTO;
+import com.AdminPanel.Admin.dto.request.RequestUserLoginDTO;
 import com.AdminPanel.Admin.dto.request.RequestUserSaveDTO;
 import com.AdminPanel.Admin.dto.request.RequestUserUpdateDTO;
-import com.AdminPanel.Admin.entity.Movie;
 import com.AdminPanel.Admin.entity.User;
 import com.AdminPanel.Admin.repo.UserRepo;
 import com.AdminPanel.Admin.service.UserService;
@@ -89,5 +88,15 @@ public class UserServiceIMPL implements UserService {
                 map(getUser, new TypeToken<List<UserDTO>>() {
                 }.getType());
         return userDTOS1;
+    }
+
+    @Override
+    public boolean userLogin(RequestUserLoginDTO requestUserLoginDTO) {
+        Optional<User> user = userRepo.findUserByUserNameEquals(requestUserLoginDTO.userName);
+        if(user.isPresent() && (user.get().getPassword() == requestUserLoginDTO.getPassword())){
+            return true;
+        }else {
+            return false;
+        }
     }
 }

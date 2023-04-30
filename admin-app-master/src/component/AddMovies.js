@@ -1,8 +1,52 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import SaveUserService from "../services/User/SaveUserService";
+import SaveMovieService from "../services/Movie/SaveMovieService";
 
 export default class AddMovies extends Component {
-  render() {
+
+
+
+    constructor(props) {
+        super(props);
+        this.state={
+            movieName:'',
+            description:'',
+            releaseDate:'',
+            director:'',
+            duration:'',
+
+        }
+    }
+    SaveMovie=(e)=>{
+        e.preventDefault();
+        let movie={movieName:this.state.movieName,description: this.state.description,releaseDate: this.state.releaseDate,director: this.state.director,duration : this.state.duration};
+        console.log('user===>'+JSON.stringify(movie));
+        SaveMovieService.SaveMovie(movie).then(res=>{
+            this.props.history.push()
+        });alert("saved Successfully..!");
+    }
+
+    changeMovieHandler=(event)=>{
+        this.setState({movieName:event.target.value});
+    }
+    changedescriptionHandler=(event)=>{
+        this.setState({description:event.target.value});
+    }
+    changeReleaseDateHandler=(event)=>{
+        this.setState({releaseDate:event.target.value});
+    }
+    changededirectorHandler=(event)=>{
+        this.setState({director :event.target.value});
+    }
+    changedurationHandler=(event)=>{
+        this.setState({duration:event.target.value});
+    }
+
+
+
+
+    render() {
     return (
       <div>
         <div className="content-wrapper">
@@ -13,32 +57,37 @@ export default class AddMovies extends Component {
 
             <div className="form-group">
                 <label htmlFor="exampleInput">MovieName</label>
-                <input type="text" className="form-control" id="M_name" placeholder="Enter Movie Name">
-                </input>
+                <input type="text" className="form-control" id="M_name" placeholder="Enter Movie Name"/>
+                    value={this.state.movieName} onChange={this.changeMovieHandler}/>
+
             </div>
 
             <div className="form-group">
                 <label htmlFor="exampleInput">Description</label>
-                <input type="text" className="form-control" id="M_desc" placeholder="Enter description">
-                </input>
+                <input type="text" className="form-control" id="M_desc" placeholder="Enter description"/>
+                value={this.state.description} onChange={this.changedescriptionHandler}/>
+
             </div>
 
         <div class="form-group">
         <label for="exampleInput">ReleaseDate</label>
-        <input type="date" class="form-control" id="M_date" placeholder="releaseDate">
-        </input>
+        <input type="date" class="form-control" id="M_date" placeholder="releaseDate"/>
+            value={this.state.releaseDate} onChange={this.changeReleaseDateHandler}/>
+
         </div>
 
             <div className="form-group">
                 <label htmlFor="exampleInput">Director</label>
-                <input type="text" className="form-control" id="M_Director" placeholder="Director">
-                </input>
+                <input type="text" className="form-control" id="M_Director" placeholder="Director"/>
+                    value={this.state.director} onChange={this.changededirectorHandler}/>
+
             </div>
 
             <div className="form-group">
                 <label htmlFor="exampleInput">Duration (min:)</label>
-                <input type="number" className="form-control" id="M_duration" placeholder="duration">
-                </input>
+                <input type="number" className="form-control" id="M_duration" placeholder="duration"/>
+                    value={this.state.duration} onChange={this.changedurationHandler}/>
+
             </div>
 
         <div class="form-group">
@@ -63,7 +112,7 @@ export default class AddMovies extends Component {
 
         <div class="row">
         <div class="col-md-2">
-            <button type="submit" class="btn btn-success btn-block btn-lg"onClick=""> Submit</button>
+            <button type="submit" class="btn btn-success btn-block btn-lg"onClick={this.SaveMovie}> Submit</button>
         </div>
         <div class="col-md-2">
             <Link to="/movies" class="btn btn-secondary btn-block btn-lg">

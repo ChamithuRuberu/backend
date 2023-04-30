@@ -51,7 +51,6 @@ export default class MovieList extends Component {
         <th>ReleaseDate</th>
         <th>Director</th>
         <th>Duration (min:)</th>
-        <th>image</th>
         <th>Action</th>
         </tr>
         </thead>
@@ -66,7 +65,6 @@ export default class MovieList extends Component {
                   <td>{movie.releaseDate}</td>
                   <td>{movie.director}</td>
                   <td>{movie.duration}</td>
-                  <td>{movie.photo}</td>
               </tr>
           )
       }

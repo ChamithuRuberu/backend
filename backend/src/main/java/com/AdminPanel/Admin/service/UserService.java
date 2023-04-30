@@ -1,6 +1,7 @@
 package com.AdminPanel.Admin.service;
 
 import com.AdminPanel.Admin.dto.UserDTO;
+import com.AdminPanel.Admin.dto.request.RequestUserLoginDTO;
 import com.AdminPanel.Admin.dto.request.RequestUserSaveDTO;
 import com.AdminPanel.Admin.dto.request.RequestUserUpdateDTO;
 import javassist.NotFoundException;
@@ -19,4 +20,6 @@ public interface UserService {
     String updateUser(RequestUserUpdateDTO requestUserUpdateDTO);
 
     List<UserDTO> getAllUsers();
+
+    boolean userLogin(RequestUserLoginDTO requestUserLoginDTO);
 }

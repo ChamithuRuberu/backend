@@ -3,6 +3,7 @@ package com.AdminPanel.Admin.controller;
 
 import com.AdminPanel.Admin.dto.MovieDTO;
 import com.AdminPanel.Admin.dto.UserDTO;
+import com.AdminPanel.Admin.dto.request.RequestUserLoginDTO;
 import com.AdminPanel.Admin.dto.request.RequestUserSaveDTO;
 import com.AdminPanel.Admin.dto.request.RequestUserUpdateDTO;
 import com.AdminPanel.Admin.service.UserService;
@@ -10,6 +11,7 @@ import com.AdminPanel.Admin.util.FileUploadUtil;
 import com.AdminPanel.Admin.util.StanderResponse;
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.cassandra.CassandraProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.StringUtils;
@@ -31,6 +33,14 @@ public class UserController {
     @Autowired
    private UserService userService;
 
+    @PostMapping("/userLogin")
+    public ResponseEntity<StanderResponse> loginUser(@RequestBody RequestUserLoginDTO requestUserLoginDTO){
+        boolean loginStatus = userService.userLogin(requestUserLoginDTO);
+        return new ResponseEntity<StanderResponse>(
+                new StanderResponse(200,"User Login Status : ",loginStatus),HttpStatus.OK
+        );
+
+    }
     @PostMapping("/saveUser")
     public ResponseEntity<StanderResponse> saveUser(@RequestBody RequestUserSaveDTO requestUserSaveDTO) {
         String id=userService.addUser(requestUserSaveDTO);

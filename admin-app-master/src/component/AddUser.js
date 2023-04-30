@@ -23,7 +23,7 @@ export default class AddUser extends Component {
         console.log('user===>'+JSON.stringify(user));
         SaveUserService.SaveUser(user).then(res=>{
             this.props.history.push()
-        });
+        });alert("saved Successfully..!");
     }
 
     changeNameHandler=(event)=>{
