@@ -38,6 +38,12 @@ export default class MovieList extends Component {
         <Link to='/movieForm' class="btn btn-outline-success">
         <i class="fas fa-plus"></i> Add New
         </Link>
+        <Link to='' class="btn text-secondary px-0">
+        <i class="fa fa-edit fa-lg"></i>
+        </Link>
+        <Link to='' class="btn text-secondary px-0">
+        <i class="fas fa-trash-alt fa-lg text-danger float-right"></i>
+        </Link>
         </div>
 
         <div class="card-body">
@@ -65,6 +71,14 @@ export default class MovieList extends Component {
                   <td>{movie.releaseDate}</td>
                   <td>{movie.director}</td>
                   <td>{movie.duration}</td>
+                  <td>
+                  <Link to='' class="btn text-secondary px-0">
+                    <i class="fa fa-edit fa-lg"></i>
+                  </Link>
+                  <Link to='' class="btn text-secondary px-0">
+                    <i class="fas fa-trash-alt fa-lg text-danger float-right"></i>
+                  </Link>
+                  </td>
               </tr>
           )
       }
