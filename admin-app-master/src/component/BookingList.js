@@ -29,6 +29,8 @@ export default class BookingList extends Component {
         <th>User Id</th>
         <th>Date</th>
         <th>Total Fee</th>
+        <th>Acton</th>
+
         </tr>
         </thead>
         <tbody>

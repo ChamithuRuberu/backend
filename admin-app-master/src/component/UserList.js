@@ -60,6 +60,14 @@ export default class UserList extends Component {
                     <td>{user.memberContact}</td>
                     <td>{user.userEmail}</td>
                     <td>{user.password}</td>
+                    <td>
+                        <Link to='' class="btn text-secondary px-0">
+                            <i className="fa fa-edit fa-lg"></i>
+                        </Link>
+                        <Link to='' class="btn text-secondary px-0">
+                            <i className="fas fa-trash-alt fa-lg text-danger float-right"></i>
+                        </Link>
+                    </td>
                 </tr>
             )
         }

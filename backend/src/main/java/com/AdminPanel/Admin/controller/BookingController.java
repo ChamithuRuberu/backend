@@ -1,11 +1,15 @@
 package com.AdminPanel.Admin.controller;
+import com.AdminPanel.Admin.dto.UserDTO;
 import com.AdminPanel.Admin.dto.request.RequestBookingSaveDTO;
+import com.AdminPanel.Admin.dto.request.RequestBookingSaveDetailsDTO;
 import com.AdminPanel.Admin.service.BookingService;
 import com.AdminPanel.Admin.util.StanderResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -24,4 +28,18 @@ public class BookingController {
                 HttpStatus.CREATED
         );
     }
+
+    @GetMapping(
+            path = "get-all-BookingDetails"
+    )
+    public ResponseEntity<StanderResponse> getAllBookingDetails() {
+
+        List<RequestBookingSaveDetailsDTO> requestBookingSaveDetailsDTOS = bookingService.getAllBookingDetails();
+        return new ResponseEntity<StanderResponse>(
+
+                new StanderResponse(200," done",requestBookingSaveDetailsDTOS),
+                HttpStatus.OK
+        );
+    }
+
 }

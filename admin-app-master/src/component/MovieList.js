@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Getmovieservice from "../services/Movie/MovieService";
+import AddMovies from "./AddMovies";
 
 export default class MovieList extends Component {
     constructor(props) {
@@ -34,17 +35,14 @@ export default class MovieList extends Component {
         <h3 class="card-title"> MovieList</h3>
         </div>
         <div class="container-fluid pt-4">
-
-        <Link to='/movieForm' class="btn btn-outline-success">
-        <i class="fas fa-plus"></i> Add New
-        </Link>
-        <Link to='' class="btn text-secondary px-0">
-        <i class="fa fa-edit fa-lg"></i>
-        </Link>
-        <Link to='' class="btn text-secondary px-0">
-        <i class="fas fa-trash-alt fa-lg text-danger float-right"></i>
-        </Link>
         </div>
+
+            <div className="container-fluid pt-4">
+
+                <Link to='/movieForm' class="btn btn-outline-success">
+                    <i className="fas fa-plus"></i> Add Movie
+                </Link>
+            </div>
 
         <div class="card-body">
         <table id="example2" class="table table-bordered table-hover">

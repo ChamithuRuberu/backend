@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import SaveUserService from "../services/User/SaveUserService";
 import SaveMovieService from "../services/Movie/SaveMovieService";
 import SaveBookingService from "../services/booking/SaveBookingService";
+import BookingList from "./BookingList";
 
 export default class AddBooking extends Component {
 
@@ -164,7 +165,7 @@ export default class AddBooking extends Component {
                                 <button type="submit" class="btn btn-success btn-block btn-lg"onClick={this.saveBooking}> Submit</button>
                             </div>
                             <div class="col-md-2">
-                                <Link to="/movies" class="btn btn-secondary btn-block btn-lg">
+                                <Link to="/BookingList" class="btn btn-secondary btn-block btn-lg">
                                     <i class="fas fa-stream"></i> Back to list
                                 </Link>
                             </div>

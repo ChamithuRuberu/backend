@@ -26,7 +26,7 @@ import java.util.List;
 import java.util.Objects;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin
 @RequestMapping("api/v1/user")
 public class UserController {
 
@@ -37,7 +37,7 @@ public class UserController {
     public ResponseEntity<StanderResponse> loginUser(@RequestBody RequestUserLoginDTO requestUserLoginDTO){
         boolean loginStatus = userService.userLogin(requestUserLoginDTO);
         return new ResponseEntity<StanderResponse>(
-                new StanderResponse(200,"User Login Status : ",loginStatus),HttpStatus.OK
+                new StanderResponse(200,"User Login Status : ",requestUserLoginDTO.userName),HttpStatus.OK
         );
 
     }

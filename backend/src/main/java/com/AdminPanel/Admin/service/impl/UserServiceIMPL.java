@@ -93,10 +93,9 @@ public class UserServiceIMPL implements UserService {
     @Override
     public boolean userLogin(RequestUserLoginDTO requestUserLoginDTO) {
         Optional<User> user = userRepo.findUserByUserNameEquals(requestUserLoginDTO.userName);
-        if(user.isPresent() && (user.get().getPassword() == requestUserLoginDTO.getPassword())){
-            return true;
-        }else {
+        if (!user.isPresent() && (user.get().getPassword() == requestUserLoginDTO.getPassword())) {
             return false;
         }
+        return true;
     }
 }

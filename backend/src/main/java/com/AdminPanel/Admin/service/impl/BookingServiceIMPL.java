@@ -1,6 +1,7 @@
 package com.AdminPanel.Admin.service.impl;
 
 import com.AdminPanel.Admin.dto.request.RequestBookingSaveDTO;
+import com.AdminPanel.Admin.dto.request.RequestBookingSaveDetailsDTO;
 import com.AdminPanel.Admin.entity.Booking;
 import com.AdminPanel.Admin.entity.BookingDeails;
 import com.AdminPanel.Admin.repo.BookinDetailsRepo;
@@ -14,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -59,8 +61,22 @@ public class BookingServiceIMPL implements BookingService {
             if (bookingDeails.size()>0){
                 bookinDetailsRepo.saveAll(bookingDeails);
             }
-
         }
+        System.out.println();
         return "Booking saved";
     }
+
+    @Override
+
+    public List<RequestBookingSaveDetailsDTO> getAllBookingDetails() {
+        List<Booking> getBooking = bookingRepo.findAll();
+        List<RequestBookingSaveDetailsDTO> requestBookingSaveDetailsDTOS = new ArrayList<>();
+
+        List<RequestBookingSaveDetailsDTO> RequestBookingSaveDetailsDTO1 = modelMapper.
+                map(getBooking, new TypeToken<List<RequestBookingSaveDetailsDTO>>() {
+                }.getType());
+        return RequestBookingSaveDetailsDTO1;
+    }
+
+
 }
